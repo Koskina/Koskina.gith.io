@@ -8,5 +8,54 @@
 <h1>Evangelia Koskina</h1>
 <p>Undergraduate student of Business Administration at University of Macedonia</p>
 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Time');
+      data.addColumn('number', 'Rising Star');
+      data.addColumn('number', 'Voice');
+
+      data.addRows([
+        [1,  4, 2],
+        [2,  25, 5],
+        [3,  62,   9],
+        [4,  45, 12],
+        [5,  50, 14],
+        [6,   70, 20],
+        [7,   100, 15],
+        [8,  75, 13],
+        [9,  65, 10],
+        [10, 60, 11],
+        [11,  40, 7],
+        [12,  50,  6],
+        [13,  20,  4],
+        [14,  6,  2]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Number of tweets per minute'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  
+  
 </body>
 </html>
