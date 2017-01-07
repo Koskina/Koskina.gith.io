@@ -8,6 +8,66 @@
 <h1>Evangelia Koskina</h1>
 <p>Undergraduate student of Business Administration at University of Macedonia</p>
 <p>Thessaloniki, Greece</p>  
-  
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Time');
+      data.addColumn('number', 'Rising Star');
+      data.addColumn('number', 'Voice');
+
+      data.addRows([
+        [10, 0, 0],
+        [15, 32, 5],
+        [20, 62, 12],
+        [25, 89, 2],
+        [30, 50, 18],
+        [35, 70, 3],
+        [40, 100, 15],
+        [45, 20, 13],
+        [50, 15, 10],
+        [55, 30, 4],
+        [60, 40, 7],
+        [65, 90,  2],
+        [70, 60,  0],
+        [75, 70, 15]
+        [80, 110, 5],
+        [85, 62, 20],
+        [90, 45, 10],
+        [95, 20, 3],
+        [100, 54, 20],
+        [110, 90, 15],
+        [115, 60, 3],
+        [120, 65, 10],
+        [125, 44, 1],
+        [130, 20, 7],
+        [135, 50, 2],
+        [140, 20, 10],
+        [145, 6, 2]      ]);
+
+      var options = {
+        chart: {
+          title: 'Number of tweets per minute'
+        },
+        width: 900,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, options);
+    }
+  </script>
+  <div id="line_top_x"></div>
 </body>
 </html>
